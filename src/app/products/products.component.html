@@ -1,0 +1,41 @@
+<h1>Products</h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product.id}}</th>
+        <td><img [src]="product.thumbnail" alt="thumbnail" class="img-thumbnail w-25"> {{product.title}}</td>
+        <td>{{product.brand}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.rating}} &#9733;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1>Employees</h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <th scope="row">{{employee.EmployeeID}}</th>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.LastName}}</td>
+      </tr>
+    </tbody>
+  </table>

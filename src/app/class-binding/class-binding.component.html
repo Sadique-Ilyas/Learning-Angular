@@ -1,0 +1,19 @@
+<p>class-binding works!</p>
+<div class="color">DIV with .color</div>
+<br>
+<div [className]="'font space'">DIV with .font .space</div>
+<br>
+<div [class]="'color font space'">DIV with .color .font .space</div>
+<br>
+<div [class.color]="'red'">DIV with class.color</div>
+<br>
+<div [className]="divStringStyles">String property as div styles </div>
+<br>
+<div [class]="divArrayStyles">Array property as div styles</div>
+<br>
+<div [ngClass]="'font'">div styles using ngClass</div>
+<br>
+<div [ngClass]="style">div styles using user defined class in ngClass</div>
+<br>
+<div [class]="'font'" [className]="'space color'">div styles, [className] ovverrides [class]</div>
+<br>

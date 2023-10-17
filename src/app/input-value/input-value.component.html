@@ -1,0 +1,6 @@
+<p>input-value works!</p>
+<br>
+<input #inputBox placeholder="Enter Text">
+<button (click)="sendText(inputBox)">Send</button>
+<h1>{{text}}</h1>
+<input #inputBox2 type="text" placeholder="Type Smething..." (keyup)="sendText(inputBox2)">

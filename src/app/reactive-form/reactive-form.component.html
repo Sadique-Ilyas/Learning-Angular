@@ -1,0 +1,103 @@
+<div class="container">
+    <div  class="bg-primary text-white text-center p-2">
+        <h1>Reactive Forms</h1>
+        <p>Form Touched: {{form.touched}} | Form Untouched: {{form.untouched}}</p>
+        <p>Form Dirty: {{form.dirty}} | Form Pristine: {{form.pristine}}</p>
+        <p>Form Valid: {{form.valid}} | Form Invalid: {{form.invalid}}</p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="saveFormData()">
+        <div class="form-group">
+            <label class="form-label">Name</label>
+            <input class="form-control" [class.is-invalid]="form.controls.name.touched && form.controls.name.invalid" type="text" name="name" placeholder="Enter Name" formControlName="name">
+            <p class="invalid-feedback">
+                Name is Required !
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-control" [class.is-invalid]="form.controls.email.touched && form.controls.email.invalid" type="email" name="email" placeholder="Enter Email" formControlName="email">
+            <p class="invalid-feedback">
+                Email is Required !
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-control" [class.is-invalid]="form.controls.phoneNumber.touched && form.controls.phoneNumber.invalid" type="tel" name="phoneNumber" placeholder="Enter Phone Number" formControlName="phoneNumber">
+            <p class="invalid-feedback">
+                Phone Number is Required !
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="form-label">Country</label>
+            <select class="form-select" name="country" [class.is-invalid]="form.controls.country.touched && form.controls.country.invalid" formControlName="country">
+                <option value="">Select</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Spain">Spain</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+            </select>
+            <p class="invalid-feedback">
+                Country is Required !
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Male" name="gender" [class.is-invalid]="form.controls.gender.touched && form.controls.gender.invalid" formControlName="gender">
+                <label class="form-check-label">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Female" name="gender" [class.is-invalid]="form.controls.gender.touched && form.controls.gender.invalid" formControlName="gender">
+                <label class="form-check-label">
+                    Female
+                </label>
+            </div>
+            <p class="invalid-feedback">
+                Gender is Required !
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="">Tech Stack</label>
+            <div class="form-check">
+                <input class="form-check-input" [class.is-invalid]="form.controls.technology.dirty && form.controls.technology.invalid && techStack.length < 1" type="checkbox" value="C#" (change)="addTechStack($event)" name="technology" formControlName="technology">
+                <label class="form-check-label">
+                    C#
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" [class.is-invalid]="form.controls.technology.dirty && form.controls.technology.invalid && techStack.length < 1" type="checkbox" value=".Net" (change)="addTechStack($event)" name="technology" formControlName="technology">
+                <label class="form-check-label">
+                    .Net
+                </label>
+                <p class="invalid-feedback">
+                    Select aleast one Tech Stack is Required !
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="form-label">Terms & Conditions</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="terms" [class.is-invalid]="form.controls.terms.touched && form.controls.terms.invalid" formControlName="terms">
+                <label class="form-check-label">
+                    I Accept the Terms & Conditions
+                </label>
+                <p class="invalid-feedback">
+                    Please accept terms & conditions !
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" [disabled]="form.invalid">
+            <input class="btn btn-secondary" type="reset">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+.container {
+    background-color: skyblue;
+    border: 2px solid black;
+    border-radius: 10%;
+    width: fit-content;
+    box-shadow: 10px 10px 10px grey;
+    padding: 10px;
+}
+
+.count {
+    text-align: center;
+    font-family: cursive;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px 22px;
+}

@@ -1,0 +1,11 @@
+<p>style-binding works!</p>
+<div style="background-color: aqua;">Div</div>
+<div [style]="'backgroundColor: red;'">Div2</div>
+<div [style]="myFont">Div3</div>
+<div [style]="{'background-color':'green', 'fontSize':'30px','font-family':'cursive'}">Div4</div>
+<div [style]="myColor">Div5</div>
+<div [style.font-weight]="'bold'">Div6</div>
+<div [style.color]="'grey'">Div7</div>
+<div [style.fontSize.px]="'50'" [style.padding.rem]="2">Div8</div>
+<div [style.backgroundColor]="false ? 'yellow' : 'blue'">Div9</div>
+<div [ngStyle]="myStyles">Div10</div>

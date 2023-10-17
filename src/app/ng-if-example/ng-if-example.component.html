@@ -1,0 +1,23 @@
+<p class="bg-primary text-white p-4 text-center">ng-if-example works! bootstrap works too !</p>
+<input type="checkbox" [(ngModel)]="isChecked" placeholder="Check/Uncheck">
+<div *ngIf="isChecked else temp">
+    if div
+</div>
+
+<ng-template #temp>
+    <div>else div</div>
+</ng-template>
+
+<h1>========</h1>
+
+<input type="checkbox" [(ngModel)]="isCheck" placeholder="Check/Uncheck">
+<div *ngIf="isCheck then ifDiv else elseDiv">
+</div>
+
+<ng-template #ifDiv>
+    <div>if div</div>
+</ng-template>
+
+<ng-template #elseDiv>
+    <div>else div</div>
+</ng-template>

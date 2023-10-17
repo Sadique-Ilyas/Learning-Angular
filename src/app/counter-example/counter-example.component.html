@@ -1,0 +1,7 @@
+<p>counter-example works!</p>
+<div class="container">
+    <h1 class="count">Counter</h1>
+    <h1 class="count">{{count}}</h1>
+    <button class="button" (click)="increment()" [disabled]="count > 9">+</button>
+    <button class="button" (click)="decrement()" [disabled]="count < 1">-</button>
+</div>

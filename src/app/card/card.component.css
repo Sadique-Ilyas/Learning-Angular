@@ -1,0 +1,5 @@
+.card {
+    padding: 0;
+    background: rgb(107,106,120);
+    background: linear-gradient(150deg, rgba(107,106,120,1) 0%, rgba(219,203,203,1) 81%, rgba(255,255,255,1) 100%);
+}

@@ -1,0 +1,107 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="saveFormData(form.value)" novalidate>
+        <div class="bg-primary text-white text-center">
+            <h1>Template Forms</h1>
+            <p>{{candidate | json}}</p>
+            <!-- <p>Form touched: {{form.touched}} | Form untouched: {{form.untouched}}</p>
+            <p>Form dirty: {{form.dirty}} | Form pristine: {{form.pristine}}</p>
+            <p>Form valid: {{form.valid}} | Form invalid: {{form.invalid}}</p> -->
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="">Name</label>
+            <input #name="ngModel" class="form-control" [class.is-invalid]="name.touched && name.invalid" type="text"
+                name="name" placeholder="Enter Name" required ngModel>
+            <p class="invalid-feedback">
+                Name is Required !
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="">Email</label>
+            <input #email="ngModel" class="form-control" [class.is-invalid]="email.touched && email.invalid"
+                type="email" name="email" placeholder="Enter Email" required ngModel>
+            <p class="invalid-feedback">
+                Email is Required !
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="">Phone Number</label>
+            <input #phoneNumber="ngModel" class="form-control"
+                [class.is-invalid]="phoneNumber.touched && phoneNumber.invalid" type="tel" name="phoneNumber"
+                placeholder="Enter Phone Number" required ngModel>
+            <p class="invalid-feedback">
+                Phone Number is Required !
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="">Country</label>
+            <select #country="ngModel" class="form-select" [class.is-invalid]="country.touched && country.invalid"
+                name="country" required ngModel>
+                <option value="" selected>Select</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="England">England</option>
+                <option value="Australia">Australia</option>
+                <option value="Spain">Spain</option>
+            </select>
+            <p class="invalid-feedback">
+                Country is Required !
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="">Gender</label>
+            <div class="form-check">
+                <input #male="ngModel" class="form-check-input" [class.is-invalid]="male.touched && male.invalid"
+                    type="radio" value="Male" name="gender" required ngModel>
+                <label class="form-check-label">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input #female="ngModel" class="form-check-input" [class.is-invalid]="female.touched && female.invalid"
+                    type="radio" value="Female" name="gender" required ngModel>
+                <label class="form-check-label">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Tech Stack</label>
+            <div class="form-check">
+                <input #tech="ngModel" class="form-check-input"
+                    [class.is-invalid]="tech.dirty && tech.invalid && techStack.length < 1" type="checkbox" value="C#"
+                    (change)="addTechStack($event)" name="tech" required ngModel>
+                <label class="form-check-label">
+                    C#
+                </label>
+            </div>
+            <div class="form-check">
+                <input #tech="ngModel" class="form-check-input"
+                    [class.is-invalid]="tech.dirty && tech.invalid && techStack.length < 1" type="checkbox" value=".Net"
+                    (change)="addTechStack($event)" name="tech" required ngModel>
+                <label class="form-check-label">
+                    .Net
+                </label>
+                <p class="invalid-feedback">
+                    Select aleast one Tech Stack is Required !
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Terms & Conditions</label>
+            <div class="form-check">
+                <input #terms="ngModel" class="form-check-input" [class.is-invalid]="terms.touched && terms.invalid"
+                    type="checkbox" name="terms" required ngModel>
+                <label class="form-check-label">
+                    I Accept the Terms & Conditions
+                </label>
+                <p class="invalid-feedback">
+                    Please accept terms & conditions !
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" [disabled]="form.invalid">
+            <input class="btn btn-primary" type="reset">
+        </div>
+    </form>
+</div>

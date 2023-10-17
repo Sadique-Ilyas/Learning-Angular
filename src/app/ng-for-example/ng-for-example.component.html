@@ -1,0 +1,17 @@
+<p>ng-for-example works!</p>
+
+<h1>Cars</h1>
+<ul *ngFor="let car of cars; index as i; first as f; last as l; odd as o; even as e">
+    <li>{{car}} | index: ({{i}}) | first: {{f}} | last: {{l}} | even: {{e}} | odd: {{o}}</li>
+</ul>
+<br>
+<h1>Employees</h1>
+<ul *ngFor="let emp of employees">
+    <li>{{emp.EmpId}}</li>
+    <li>{{emp.EmpName}}</li>
+    <li>{{emp.Department}}</li>
+    <li>{{emp.Salary}}</li>
+    <ul *ngFor="let tech of emp.TechStack">
+        <li>{{tech}}</li>
+    </ul>
+</ul>

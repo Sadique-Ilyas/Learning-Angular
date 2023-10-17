@@ -1,0 +1,12 @@
+<p>car-details works!</p>
+<h1>Details of car with Id = {{id}}</h1>
+<a routerLink="car_engine">Car Engine</a>
+<br>
+<button (click)="previous(id)" [disabled]="id < 2">Previous</button>
+&nbsp;
+<button (click)="next(id)">Next</button>
+&nbsp;
+<button (click)="backToCarList(id)">Back to Car List</button>
+<br>
+<a routerLink="/home">Go to Home</a>
+<router-outlet></router-outlet>
